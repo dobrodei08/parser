@@ -31,6 +31,8 @@ class Product(models.Model):
     link = models.CharField(max_length=254, unique=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, blank=True, null=True)
     brandname = models.ForeignKey(Brandname, on_delete=models.PROTECT, blank=True, null=True)
+    count = models.IntegerField(blank=True, null=True, default=0)
+    price = models.FloatField(blank=True, null=True, default=0)
     def __str__(self):
         string = '{} {}'.format(self.brandname, self.article)
         return  string
